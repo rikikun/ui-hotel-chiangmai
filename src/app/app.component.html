@@ -24,20 +24,11 @@
       <th>Bed Info.</th>
       <th></th>
     </tr>
-    <tr>
-      <td>1</td>
-      <td>Hotel 1</td>
-      <td>100</td>
-      <td>Infomation for hotel 1</td>
-      <td class="remove">
-        <button>remove</button>
-      </td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>Hotel 2</td>
-      <td>200</td>
-      <td>Infomation for hotel 2</td>
+    <tr *ngFor="let hotel of hotels; let i=index">
+      <td>{{i+1}}</td>
+      <td>{{hotel?.name}}</td>
+      <td>{{hotel?.number}}</td>
+      <td>{{hotel.bedInfo}}</td>
       <td class="remove">
         <button>remove</button>
       </td>
