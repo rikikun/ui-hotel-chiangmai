@@ -5,15 +5,15 @@
   </h1>
   <div>
     <span id="name">Name</span>
-    <input for="name" type="text" class="input-name" placeholder="Name">
+    <input for="name" type="text" class="input-name" placeholder="Name" [(ngModel)]="hotel.name">
 
     <span id="number">Number</span>
-    <input for="number" type="number" placeholder="Number">
+    <input for="number" type="number" placeholder="Number" [(ngModel)]="hotel.number">
 
     <span id="info">Bed Info.</span>
-    <input for="info" type="text" class="input-info" placeholder="Bed Info.">
+    <input for="info" type="text" class="input-info" placeholder="Bed Info." [(ngModel)]="hotel.bedInfo">
 
-    <button type="submit">Submit</button>
+    <button type="submit" (click)="onAdd()">Submit</button>
   </div>
   <br/>
   <table>
@@ -30,7 +30,7 @@
       <td>{{hotel?.number}}</td>
       <td>{{hotel.bedInfo}}</td>
       <td class="remove">
-        <button>remove</button>
+        <button (click)="onRemove(i)">remove</button>
       </td>
     </tr>
   </table>
