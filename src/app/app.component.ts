@@ -24,7 +24,7 @@ export class AppComponent implements OnInit {
   }
 
   getHotels() {
-    this.hotels = this.hotelService.getHotelList();
+    this.hotelService.getHotelList().subscribe(hotels => this.hotels = hotels);
   }
 
   onAdd(): void {
