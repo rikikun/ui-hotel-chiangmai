@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Hotel } from './entity/hotel';
 import { HotelService } from './service/hotel.service';
+import { print } from 'util';
 
 @Component({
   selector: 'app-root',
@@ -12,6 +13,7 @@ export class AppComponent implements OnInit {
   hotels: Hotel[];
 
   hotel: Hotel = {
+    id: 1,
     name: '',
     number: 0,
     bedInfo: ''
