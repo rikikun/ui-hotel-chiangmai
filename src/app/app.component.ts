@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { HOTELS } from './mock-hotel';
 import { Hotel } from './entity/hotel';
+import { HotelService } from './service/hotel.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit {
 
-  hotels = HOTELS;
+  hotels: Hotel[];
 
   hotel: Hotel = {
     name: '',
@@ -17,7 +17,14 @@ export class AppComponent implements OnInit{
     bedInfo: ''
   };
 
+  constructor(private hotelService: HotelService) { }
+
   ngOnInit() {
+    this.getHotels();
+  }
+
+  getHotels() {
+    this.hotels = this.hotelService.getHotelList();
   }
 
   onAdd(): void {
