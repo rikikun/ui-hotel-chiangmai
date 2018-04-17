@@ -9,7 +9,7 @@ import { of } from 'rxjs/observable/of';
 @Injectable()
 export class HotelService {
   endpoint = {
-    getRoom: 'http://ec2-13-229-205-231.ap-southeast-1.compute.amazonaws.com:8080/room'
+    getRoom: 'http://localhost:8080/room'
   };
 
   constructor(
