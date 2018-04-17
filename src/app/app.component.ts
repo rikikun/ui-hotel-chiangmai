@@ -30,10 +30,20 @@ export class AppComponent implements OnInit {
   }
 
   onAdd(): void {
-    this.hotels.push(this.hotel);
+    this.hotelService.createHotel(this.hotel).subscribe(hotels => {
+      this.getHotels();
+      this.hotel = {
+        id: 1,
+        name: '',
+        number: 0,
+        bedInfo: ''
+      };
+    });
   }
 
   onRemove(index: number): void {
-    this.hotels = this.hotels.filter((value, i) => index !== i);
+    this.hotelService.deleteHotel(index).subscribe(response => {
+      this.getHotels();
+    });
   }
 }
